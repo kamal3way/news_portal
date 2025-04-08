@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-const API_KEY = import.meta.env.REACT_APP_VITE_NEWS_API_KEY;
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const NewsPage = () => {
   const { category } = useParams();
   const [articles, setArticles] = useState([]);
