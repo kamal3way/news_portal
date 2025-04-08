@@ -6,13 +6,15 @@ const SearchResults = () => {
   const { query } = useParams();
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "9c31d7bbb7b94a6fb182be5bdc8012b5";
+  const API_KEY = "60421b063f044e85475e49938e3b5377";
 
   useEffect(() => {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`
+          //`https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`
+          `https://gnews.io/api/v4/search?q=${query}&lang=en&country=us&max=10&apikey=${API_KEY}`
+
         );
         setResults(response.data.articles);
         setLoading(false);
