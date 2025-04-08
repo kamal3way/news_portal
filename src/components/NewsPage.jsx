@@ -13,6 +13,7 @@ const NewsPage = () => {
         const response = await fetch(
           `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
         );
+        console.log(response);
         const data = await response.json();
         setArticles(data.articles || []);
         setLoading(false);
